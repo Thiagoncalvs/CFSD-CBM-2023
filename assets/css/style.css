@@ -1,0 +1,197 @@
+@font-face {
+    font-family: "RobotoRegular";
+    src: url(../fontes/Roboto/Roboto-Regular.ttf);
+}
+:root{
+    --MeuPreto: #1b1b1b;
+    --MeuFundo: #343434;
+    --MeuBranco: #cdcdcd;
+    --MeuFundoHover: hsla(0, 0%, 20%, 0.5);
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'RobotoRegular';
+    text-transform: none;
+    font-size: 5vw;
+    /* color: var(--MeuBranco); */
+}
+
+body{
+    background: var(--MeuFundo);
+    color: var(--MeuBranco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.corpo_app{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--MeuPreto);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+header{
+    display: flex;
+    position: relative;
+    background-color: var(--MeuFundo);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+header .logo{
+    color: var(--MeuBranco);
+    font-weight: 600;
+    font-size: 1.1em;
+    user-select: none;
+}
+.abas input{
+    visibility: hidden;
+    display: none;
+}
+.buttons{
+    display: flex;
+    position: relative;
+    background-color: var(--MeuFundo);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    padding-right: 30px;
+    overflow-x: scroll;
+}
+.buttons label{
+    width: 25vw;
+    opacity: 0.40;
+    text-align: center;
+    padding: 10px 30px;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+    user-select: none;
+}
+.abas input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.abas input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.abas input:nth-child(3):checked ~ .buttons label:nth-child(3),
+.abas input:nth-child(4):checked ~ .buttons label:nth-child(4),
+.abas input:nth-child(5):checked ~ .buttons label:nth-child(5),
+.abas input:nth-child(6):checked ~ .buttons label:nth-child(6){
+    opacity: 1;
+}
+.content{
+    display: flex;
+    position: relative;
+    width: calc(100% * 6);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.content .box{
+    position: relative;
+    width: 100vw;
+}
+.abas input:nth-child(1):checked ~ .content{
+    left: calc(100vw * 0);
+}
+.abas input:nth-child(2):checked ~ .content{
+    left: calc(100vw * -1);
+}
+.abas input:nth-child(3):checked ~ .content{
+    left: calc(100vw * -2);
+}
+.abas input:nth-child(4):checked ~ .content{
+    left: calc(100vw * -3);
+}
+.abas input:nth-child(5):checked ~ .content{
+    left: calc(100vw * -4);
+}
+.abas input:nth-child(6):checked ~ .content{
+    left: calc(100vw * -5);
+}
+.content .data{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.ListConteudosInicio{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    height: 75vh;
+    overflow-y: auto;
+    /* background-color: rgb(255, 81, 0); */
+}
+.ListConteudosInicio .block h1{
+    /* background-color: aquamarine; */
+    padding: 3% 0;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ListConteudosInicio .block h2{
+    /* background-color: aquamarine; */
+    font-weight: 100;
+}
+.ListConteudosInicio svg{
+    width: 90vw;
+    height: 50vh;
+    /* background-color: red; */
+}
+.ListConteudos{
+    position: relative;
+    height: 80vh;
+    width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* background-color: aqua; */
+}
+.ListConteudos .block{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    gap: 10%;
+    padding: 5% 0;
+    cursor: pointer;
+    user-select: none;
+}
+.ListConteudos .block:hover{
+    background-color: var(--MeuFundoHover);
+}
+.ListConteudos .block .details{
+    position: relative;
+    width: 100vw;
+}
+.ListConteudos .block .details .listHead{
+    display: flex;
+    justify-content: space-around;
+}
+.ListConteudos .block .details .listHead h4{
+    font-size: 1em;
+    /* width: 100%; */
+    font-weight: 600;
+}
+.resumo_obs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ListConteudos .block .details p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    font-size: 0.6em;
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    width: 2px;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--MeuFundo);
+}
